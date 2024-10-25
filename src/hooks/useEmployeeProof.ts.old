@@ -1,0 +1,48 @@
+// import { useState, useEffect } from "react";
+// import axios from "axios";
+// // import { EmployeeProof } from "types/employee-proof.type";
+
+// interface Data {
+//   proofData: null | EmployeeProof[];
+//   isLoading: boolean;
+//   error: null | string;
+// }
+// const useEmployeeProof = () => {
+//   const fullUrl = `${import.meta.env.VITE_TMS_EMPLOYEE_BACKEND}/rtwdocsurl`;
+//   const [state, setState] = useState<Data>({
+//     proofData: null,
+//     isLoading: true,
+//     error: null,
+//   });
+
+//   useEffect(() => {
+//     async function makeApiCall() {
+//       const token = localStorage.getItem("token");
+//       if (token) {
+//         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+//       }
+//       const response = await axios.get(fullUrl, { withCredentials: true });
+//       const data = await response.data;
+//       if (response.status === 200) {
+//         if (data?.errors) {
+//           setState({
+//             proofData: null,
+//             isLoading: false,
+//             error: data.errors,
+//           });
+//         } else {
+//           setState({
+//             proofData: data as EmployeeProof[],
+//             isLoading: false,
+//             error: null,
+//           });
+//         }
+//       }
+//     }
+
+//     makeApiCall();
+//   }, [fullUrl]);
+
+//   return state;
+// };
+// export default useEmployeeProof;
